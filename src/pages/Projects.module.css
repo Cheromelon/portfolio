@@ -1,0 +1,179 @@
+.main {
+  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+.pageHeader {
+  padding: 4rem 2.5rem 3rem;
+  border-bottom: 2px solid var(--gray2);
+}
+
+.pageTag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--yellow);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.pageTitleOutline {
+  -webkit-text-stroke: 2px var(--white);
+  color: transparent;
+}
+
+.pageDesc {
+  font-size: 15px;
+  color: var(--gray-light);
+  max-width: 500px;
+}
+
+.filterBar {
+  display: flex;
+  gap: 0;
+  padding: 0 2.5rem;
+  border-bottom: 2px solid var(--gray2);
+  overflow-x: auto;
+}
+
+.filterBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--gray-light);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 1rem 1.5rem;
+  cursor: crosshair;
+  transition: all 0.15s;
+  white-space: nowrap;
+  margin-bottom: -2px;
+}
+
+.filterBtn:hover { color: var(--white); }
+
+.filterActive {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 0;
+  padding: 2.5rem;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--gray);
+  border: 1px solid var(--gray2);
+  padding: 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.15s;
+}
+
+.card:hover {
+  border-color: var(--white);
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 var(--gray2);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardNum {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--gray2);
+  line-height: 1;
+}
+
+.cardStatus {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  border: 1px solid;
+  padding: 3px 10px;
+}
+
+.cardAccent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.cardPeriod {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--gray-light);
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cardTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.techTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--black);
+  border: 1px solid var(--gray2);
+  color: var(--gray-light);
+  padding: 2px 8px;
+}
+
+.cardArrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .pageHeader { padding: 3rem 1.25rem 2rem; }
+  .filterBar { padding: 0 1.25rem; }
+  .grid { padding: 1.25rem; gap: 1rem; grid-template-columns: 1fr; }
+}

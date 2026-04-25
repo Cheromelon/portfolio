@@ -1,0 +1,436 @@
+.main {
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 2.5rem 4rem;
+  overflow: hidden;
+  border-bottom: 2px solid var(--gray2);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--gray) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gray) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.2;
+}
+
+.heroContent {
+  max-width: 1100px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--gray-light);
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 13vw, 12rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  margin-bottom: 2.5rem;
+}
+
+.heroLine1 {
+  display: block;
+  color: var(--white);
+}
+
+.heroLine2 {
+  display: block;
+  color: var(--white);
+  -webkit-text-stroke: 2px var(--white);
+  color: transparent;
+}
+
+.heroAccent {
+  color: var(--yellow);
+  -webkit-text-stroke: 0;
+}
+
+.heroSub {
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+  border-left: 3px solid var(--yellow);
+  padding-left: 1.25rem;
+}
+
+.heroRole {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--yellow);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.heroTagline {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 1rem 2rem;
+  border: 2px solid var(--yellow);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.btnPrimary:hover {
+  background: transparent;
+  color: var(--yellow);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 var(--yellow);
+}
+
+.btnArrow {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.btnPrimary:hover .btnArrow {
+  transform: translateX(4px);
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  padding: 1rem 2rem;
+  border: 2px solid var(--gray2);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.btnOutline:hover {
+  border-color: var(--white);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 var(--white);
+}
+
+/* STATS */
+.heroStats {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.stat {
+  text-align: right;
+}
+
+.statNum {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--white);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--gray-light);
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--gray2);
+}
+
+/* SCROLL INDICATOR */
+.heroScroll {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--gray-light);
+  z-index: 1;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(var(--gray-light), transparent);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* FEATURED PROJECTS */
+.featured {
+  padding: 5rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featuredHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.sectionTag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--yellow);
+  letter-spacing: 0.1em;
+}
+
+.seeAll {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gray-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.seeAll:hover { color: var(--yellow); }
+
+.projectStrip {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 2px solid var(--gray2);
+}
+
+.projectCard {
+  display: grid;
+  grid-template-columns: 60px 1fr 40px;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--gray2);
+  text-decoration: none;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.projectCard:last-child { border-bottom: none; }
+
+.projectCard:hover {
+  background: var(--gray);
+}
+
+.projectCard:hover .projectArrow {
+  transform: translateX(6px);
+}
+
+.projectNum {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--gray2);
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.projectCard:hover .projectNum { color: var(--gray-light); }
+
+.projectCardContent { flex: 1; }
+
+.projectStatus {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.4rem;
+}
+
+.projectCardTitle {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.projectCardDesc {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  max-width: 600px;
+}
+
+.projectTech {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.techPill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  background: var(--gray);
+  border: 1px solid var(--gray2);
+  color: var(--gray-light);
+  padding: 3px 10px;
+}
+
+.projectArrow {
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+/* MARQUEE */
+.marqueeWrapper {
+  border-top: 2px solid var(--gray2);
+  border-bottom: 2px solid var(--gray2);
+  overflow: hidden;
+  padding: 1rem 0;
+  background: var(--gray);
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.marqueeText {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--gray-light);
+  padding-right: 2rem;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.333%); }
+}
+
+/* CTA */
+.ctaSection {
+  padding: 6rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ctaBox {
+  border: 2px solid var(--gray2);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBox::before {
+  content: 'CONTACT';
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 10rem;
+  color: var(--gray);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.ctaLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--yellow);
+  letter-spacing: 0.15em;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--white);
+  max-width: 500px;
+  line-height: 1.1;
+}
+
+@media (max-width: 700px) {
+  .hero { padding: 6rem 1.25rem 3rem; }
+  .heroStats { position: static; flex-wrap: wrap; margin-top: 2rem; }
+  .heroScroll { display: none; }
+  .featured { padding: 3rem 1.25rem; }
+  .projectCard { grid-template-columns: 40px 1fr 30px; padding: 1.25rem 1rem; }
+  .projectNum { font-size: 2rem; }
+  .projectCardTitle { font-size: 1.2rem; }
+  .ctaSection { padding: 3rem 1.25rem; }
+  .ctaBox { padding: 2rem; }
+  .ctaBox::before { display: none; }
+}
