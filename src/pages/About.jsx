@@ -64,13 +64,25 @@ export default function About() {
           </div>
 
           {/* RESUME DOWNLOAD */}
-          <a
-            href="/resume.pdf"
-            download="Chervith_Nannuru_Resume.pdf"
-            className={styles.resumeBtn}
-          >
-            ↓ DOWNLOAD RESUME
-          </a>
+          {/* RESUME */}
+<div className={styles.resumeActions}>
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.resumeBtn}
+  >
+    👁 VIEW RESUME
+  </a>
+
+  <a
+    href="/resume.pdf"
+    download="Chervith_Nannuru_Resume.pdf"
+    className={styles.resumeBtn}
+  >
+    ⬇ DOWNLOAD
+  </a>
+</div>
         </div>
 
         <div className={styles.profileContent}>

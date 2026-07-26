@@ -107,6 +107,7 @@ export const projects = [
   category: 'ML / Deep Learning',
   color: '#2e8b57',
   github: 'https://github.com/Cheromelon/Potato-Disease-Classification',
+  demo: 'https://potato-disease-classifier-rho.vercel.app/'
 },
 {
     id: 4,

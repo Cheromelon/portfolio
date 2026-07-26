@@ -517,6 +517,9 @@
   .profile { grid-template-columns: 1fr; }
   .profileImage { position: static; border-right: none; border-bottom: 2px solid var(--gray2); }
   .whatGrid { grid-template-columns: 1fr 1fr; }
+  .resumeActions {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
@@ -526,4 +529,36 @@
   .whatGrid { grid-template-columns: 1fr; }
   .eduCard { grid-template-columns: 1fr; gap: 0.5rem; }
   .skillsSection, .educationSection, .achSection { padding: 3rem 1.25rem; }
+}
+.resumeActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.resumeBtn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--yellow);
+  color: var(--black);
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  padding: 1rem;
+  border: 2px solid var(--yellow);
+
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.resumeBtn:hover {
+  background: transparent;
+  color: var(--yellow);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 var(--yellow);
 }
