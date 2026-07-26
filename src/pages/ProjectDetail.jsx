@@ -11,7 +11,9 @@ export default function ProjectDetail() {
       <main className={styles.main}>
         <div className={styles.notFound}>
           <h1>PROJECT NOT FOUND</h1>
-          <Link to="/projects" className={styles.back}>← BACK TO PROJECTS</Link>
+          <Link to="/projects" className={styles.back}>
+            ← BACK TO PROJECTS
+          </Link>
         </div>
       </main>
     )
@@ -22,15 +24,24 @@ export default function ProjectDetail() {
 
   return (
     <main className={styles.main}>
-      <Link to="/projects" className={styles.backLink}>← ALL PROJECTS</Link>
+      <Link to="/projects" className={styles.backLink}>
+        ← ALL PROJECTS
+      </Link>
 
-      <div className={styles.hero} style={{ borderColor: project.color }}>
+      <div
+        className={styles.hero}
+        style={{ borderColor: project.color }}
+      >
         <div className={styles.heroBadge}>
-          <span className={styles.heroStatus} style={{ color: project.color }}>
+          <span
+            className={styles.heroStatus}
+            style={{ color: project.color }}
+          >
             ● {project.status}
           </span>
           <span className={styles.heroCat}>{project.category}</span>
         </div>
+
         <h1 className={styles.heroTitle}>{project.title}</h1>
         <p className={styles.heroPeriod}>{project.period}</p>
       </div>
@@ -51,12 +62,27 @@ export default function ProjectDetail() {
         <div className={styles.contentSide}>
           <div className={styles.sideCard}>
             <span className={styles.sideLabel}>TECH STACK</span>
+
             <div className={styles.techList}>
-              {project.tech.map(t => (
-                <span key={t} className={styles.techTag}>{t}</span>
+              {project.tech.map((t) => (
+                <span key={t} className={styles.techTag}>
+                  {t}
+                </span>
               ))}
             </div>
           </div>
+
+          {/* Show only for deployed projects */}
+          {project.status === 'SHIPPED' && project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.demoBtn}
+            >
+              LIVE DEMO →
+            </a>
+          )}
 
           <a
             href={project.github}
@@ -72,12 +98,22 @@ export default function ProjectDetail() {
       {/* NEXT PROJECT */}
       <div className={styles.nextProject}>
         <span className={styles.nextLabel}>// NEXT PROJECT</span>
-        <Link to={`/projects/${next.id}`} className={styles.nextCard}>
+
+        <Link
+          to={`/projects/${next.id}`}
+          className={styles.nextCard}
+        >
           <div>
             <p className={styles.nextTitle}>{next.title}</p>
             <p className={styles.nextPeriod}>{next.period}</p>
           </div>
-          <span className={styles.nextArrow} style={{ color: next.color }}>→</span>
+
+          <span
+            className={styles.nextArrow}
+            style={{ color: next.color }}
+          >
+            →
+          </span>
         </Link>
       </div>
     </main>

@@ -43,12 +43,12 @@ export default function Home() {
 
         <div className={styles.heroStats}>
           <div className={styles.stat}>
-            <span className={styles.statNum}>8.04</span>
+            <span className={styles.statNum}>8.2</span>
             <span className={styles.statLabel}>CGPA</span>
           </div>
           <div className={styles.statDivider} />
           <div className={styles.stat}>
-            <span className={styles.statNum}>03</span>
+            <span className={styles.statNum}>5</span>
             <span className={styles.statLabel}>PROJECTS</span>
           </div>
           <div className={styles.statDivider} />
@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         <div className={styles.projectStrip}>
-          {projects.map((p, i) => (
+          {projects.slice(0,3).map((p, i) => (
             <Link to={`/projects/${p.id}`} key={p.id} className={styles.projectCard}>
               <div className={styles.projectNum}>0{i + 1}</div>
               <div className={styles.projectCardContent}>

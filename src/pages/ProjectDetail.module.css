@@ -213,3 +213,22 @@
   .main { padding: 6rem 1.25rem 4rem; }
   .content { grid-template-columns: 1fr; gap: 2rem; }
 }
+.demoBtn {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 0.85rem;
+  text-decoration: none;
+  transition: all 0.15s;
+  margin-bottom: 1rem;
+}
+
+.demoBtn:hover {
+  background: var(--white);
+  color: var(--black);
+}
